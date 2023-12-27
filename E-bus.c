@@ -114,7 +114,7 @@ void creer_reservation() {
                     printf("Entrez la date du voyage (JJ/MM/AAAA) : ");
                     scanf("%s", r.date);
                     printf("Entrez un identifiant pour la reservation : ");
-                    scanf("%d", r.id);
+                    scanf("%d", &r.id);
                     ajouter_reservation(r);
                     printf("Votre réservation a été effectuée avec succès !\n");
                     printf("Votre numéro de réservation est : %d\n", r.id);
