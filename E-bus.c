@@ -116,8 +116,8 @@ void creer_reservation() {
                     printf("Entrez un identifiant pour la reservation : ");
                     scanf("%d", r.id);
                     ajouter_reservation(r);
-                    printf("Votre réservation a été effectuée avec succès !\n");
-                    printf("Votre numéro de réservation est : %d\n", r.id);
+                    printf("Votre rÃ©servation a Ã©tÃ© effectuÃ©e avec succÃ¨s !\n");
+                    printf("Votre numÃ©ro de rÃ©servation est : %d\n", r.id);
             }
             else {
                     printf("Votre identifiant de voyageur est invalide !\n");
@@ -130,11 +130,11 @@ void creer_reservation() {
 void afficher_details_bus(int c) {
     int found = 0;
 
-    for (int i = 0; i < nb_bus; i++) {
-        if (bus_disponible(c) ){
-            printf("\nDétails du bus avec l'ID %d :\n", c);
-            printf("Modèle: %s\n", bus[i].modele);
-            printf("Capacité: %d\n", bus[i].capacite);
+    for (int i = 0; i < 100; i++) {
+        if (bus_disponible(c)==1 ){
+            printf("\nDÃ©tails du bus avec l'ID %d :\n", c);
+            printf("ModÃ¨le: %s\n", bus[i].modele);
+            printf("CapacitÃ©: %d\n", bus[i].capacite);
             printf("Prix: %.2f\n", bus[i].prix);
             printf("-------------------------\n");
             found = 1;
@@ -161,15 +161,15 @@ void modifier_details_reservation(int id) {
 
             switch (x) {
                 case 1:
-                    printf("Modifiez la date actuelle de la réservation (actuelle: %s) : ", res[i].date);
+                    printf("Modifiez la date actuelle de la rÃ©servation (actuelle: %s) : ", res[i].date);
                     scanf("%s", res[i].date);
-                    printf("La date de la réservation avec l'ID %d a ete modifiee avec succes!\n", id);
+                    printf("La date de la rÃ©servation avec l'ID %d a ete modifiee avec succes!\n", id);
                     break;
 
                 case 2:
-                    printf("Modifiez le bus actuelle de la réservation (actuelle: %s) : ", res[i].id_bus);
+                    printf("Modifiez le bus actuelle de la rÃ©servation (actuelle: %s) : ", res[i].id_bus);
                     scanf("%d", res[i].id_bus);
-                    printf("Le bus de la réservation avec l'ID %d a ete modifiee avec succes!\n", id);
+                    printf("Le bus de la rÃ©servation avec l'ID %d a ete modifiee avec succes!\n", id);
                     break;
 
                 default:
@@ -182,7 +182,7 @@ void modifier_details_reservation(int id) {
     }
 
     if (!found) {
-        printf("Aucune réservation trouvée avec l'ID %d.\n", id);
+        printf("Aucune rÃ©servation trouvÃ©e avec l'ID %d.\n", id);
     }
 }
 
@@ -223,7 +223,7 @@ int main(){
             case 5:
 {
     int reservation_id;
-    printf("Entrez l'ID de la réservation dont vous souhaitez modifier les details : ");
+    printf("Entrez l'ID de la rÃ©servation dont vous souhaitez modifier les details : ");
     scanf("%d", &reservation_id);
     modifier_details_reservation(reservation_id);
 }
@@ -233,7 +233,7 @@ break;
                 break;
 
             default:
-                printf("Choix invalide. Veuillez réessayer.\n");
+                printf("Choix invalide. Veuillez rÃ©essayer.\n");
         }
     } while (choix != 6);
 
