@@ -168,7 +168,7 @@ void modifier_details_reservation(int id) {
 
                 case 2:
                     printf("Modifiez le bus actuelle de la réservation (actuelle: %s) : ", res[i].id_bus);
-                    scanf("%d", res[i].id_bus);
+                    scanf("%d", &res[i].id_bus);
                     printf("Le bus de la réservation avec l'ID %d a ete modifiee avec succes!\n", id);
                     break;
 
